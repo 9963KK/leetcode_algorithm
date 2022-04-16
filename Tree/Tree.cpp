@@ -67,15 +67,6 @@ int main(){
 //    Tree* TreeList;
    
 //    free(TreeList);
-for (int i = 0; i < 5; i++)
-{
-    /* code */
-    printf("%d",i);
-    printf("1111");
-}
 
-   
-    return 1;
-
-
+return 0;
 }

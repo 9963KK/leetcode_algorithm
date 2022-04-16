@@ -6,31 +6,38 @@ class Solution
 public:
     int missingNumber(vector<int> &nums)
     {
-        int low=0;
-        int high=nums.size()-1;
-        int mid=(low+high)/2;
-        while (low<=high)
+        int low = 0;
+        int high = nums.size() - 1;
+        int mid = (low + high) / 2;
+        if (nums[low] == low && nums[high] == high)
+        {
+            return high + 1;
+        }
+        while (low <= high)
         {
             if (nums.empty())
             {
-                return -1;
+                return 0;
             }
-            if (mid == nums[mid] - 1)
+
+            if (nums[mid] != mid)
             {
-                return mid;
+
+                high = mid - 1;
+                mid = (low + high) / 2;
+                if (high < 0)
+                    mid = mid - 1;
             }
-            if (nums[mid]!=mid)
-            {  
-                {
-                    high=mid-1;
-                    mid=(low+high)/2;
-            
-                }
-            }else {
-                low=mid+1;
-                mid=(low+high)/2;
+            else
+            {
+                low = mid + 1;
+                mid = (low + high) / 2;
             }
-        return -1;
+            //   if (mid == nums[mid]-1)
+            // {
+            //     return mid;
+            // }
+        }
+        return mid + 1;
     }
-}
 };

@@ -27,7 +27,7 @@ typedef struct DNode
     struct DNode *prior,*next;
 }DNode,*DLinkList;
 //栈
-typedef struct stack
+typedef struct
 {
     int data[maxSize];//存放栈的数组
     int top;//栈顶指针
@@ -43,5 +43,16 @@ int data[maxSize];
 int front;
 int rear;
 }SqQueue;
+typedef struct QNode
+{
+    int data;
+    struct QNode *next;
+}QNode;
+typedef struct 
+{
+    QNode *front;
+    QNode *rear;
+}LiQueue;
+
 
 #endif
